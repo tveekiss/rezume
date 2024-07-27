@@ -1,0 +1,100 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background: #fad5d0;
+    --bold-family: Ubuntu-Bold, arail, sans-serif;
+    --medium-family: Ubuntu-medium, arail, sans-serif;
+    --regular-family: Ubuntu-Regular, arail, sans-serif;
+    --light-family: Ubuntu-Light, arail, sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    background-color: #a46767;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fad5d0;
+}
+
+header h1 {
+    font-family: var(--bold-family);
+    font-size: 2em;
+    margin: 0;
+}
+
+header p {
+    font-family: var(--medium-family);
+    font-size: 1.5em;
+}
+
+main {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about-info {
+    background: #a46767;
+    width: 70%;
+    height: 20%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.about-info p {
+    font-family: var(--regular-family);
+    color: #fad5d0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.about-info img {
+    width: 50px;
+}
+
+.skills-info {
+    background: #a46767;
+    width: 70%;
+    height: auto;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fad5d0;
+    text-align: center;
+    font-family: var(--light-family);
+}
+
+.skills-info h1 {
+    font-family: var(--bold-family);
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 100%;
+    background-color: #fad5d0;
+    border-radius: 10px;
+}
+
+.skills {
+    text-align: right;
+    padding: 10px 10px 10px 0;
+    border-radius: 10px 0 0 10px;
+
+}
+
+.html {width: 90%; background-color: #04AA6D;}
+.css {width: 80%; background-color: #04AA6D;}
+.js {width: 50%; background-color: #04AA6D;}
+.django {width: 60%; background-color: #04AA6D;}
+.fastapi {width: 40%; background-color: #04AA6D;}
