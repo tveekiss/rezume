@@ -1,4 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    overflow-x: hidden;
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -75,7 +80,7 @@ main {
 
 .skills-info h1 {
     font-family: var(--bold-family);
-    font-size: 2em;
+    font-size: 3em;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -93,8 +98,230 @@ main {
 
 }
 
-.html {width: 90%; background-color: #04AA6D;}
-.css {width: 80%; background-color: #04AA6D;}
-.js {width: 50%; background-color: #04AA6D;}
-.django {width: 60%; background-color: #04AA6D;}
-.fastapi {width: 40%; background-color: #04AA6D;}
+.html {width: 90%; background-color: #279d27;}
+.css {width: 80%; background-color: #d03131;}
+.js {width: 50%; background-color: blue;}
+.django {width: 60%; background-color: #e7792b;}
+.fastapi {width: 40%; background-color: gray;}
+
+.timeline-info h1 {
+    font-family: var(--bold-family);
+    font-size: 3em;
+    color: #fad5d0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.timeline-info {
+    background: #a46767;
+    width: 70%;
+    height: auto;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: var(--light-family);
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #fad5d0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #fad5d0;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -16px;
+}
+
+/* The actual content */
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+
+
+footer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background: #a46767;
+}
+
+.contacts {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 130px;
+}
+.contact-card img {
+    width: 70px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-card p {
+    font-family: var(--regular-family);
+    color: #fad5d0;
+    font-size: 20px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+
+    header h1 {
+        font-size: 1.7em;
+    }
+
+    .about-info p {
+        font-size: 1em;
+    }
+
+
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline-container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0;
+    }
+
+    .content {
+        font-size: 12px;
+    }
+
+    .timeline-info h1 {
+        font-size: 2em;
+    }
+
+    .contacts {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .contact-card {
+        width: 30%;
+        text-align: center;
+    }
+    .contact-card img {
+        width: 50px;
+    }
+    .contact-card p {
+        font-size: 10px;
+    }
+
+    .contact-card:first-child p {
+        width: 95%;
+    }
+
+    .contact-card:nth-child(2) {
+        width: 40%;
+    }
+}
