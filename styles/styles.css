@@ -233,7 +233,6 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 130px;
 }
 .contact-card img {
     width: 70px;
@@ -248,7 +247,6 @@ footer {
 .contact-card p {
     font-family: var(--regular-family);
     color: #fad5d0;
-    font-size: 20px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -293,9 +291,7 @@ footer {
         left: 0;
     }
 
-    .content {
-        font-size: 12px;
-    }
+
 
     .timeline-info h1 {
         font-size: 2em;
@@ -303,7 +299,6 @@ footer {
 
     .contacts {
         width: 100%;
-        margin-right: 0;
     }
 
     .contact-card {
@@ -325,3 +320,21 @@ footer {
         width: 40%;
     }
 }
+
+@media screen and (max-width: 1300px) {
+    .contacts {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        font-size: 12px;
+    }
+
+    .contact-card p {
+        font-size: 12px;
+    }
+}
+
